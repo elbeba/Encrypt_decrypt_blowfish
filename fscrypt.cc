@@ -33,13 +33,11 @@ void Fscrypt:: cbc_mode(const unsigned char *inn, unsigned char *out, long lengt
 			}
 			
 			count=count- BLOCKSIZE;	
-			/*
-			inn += BLOCKSIZE;
-			out += BLOCKSIZE;*/
+			
 			length -= BLOCKSIZE; 
 		}
 	}
-	else						//cbc encrypt algorithm
+	else						
 	{
 		int count=0;
 		while (length > 0)
@@ -54,9 +52,7 @@ void Fscrypt:: cbc_mode(const unsigned char *inn, unsigned char *out, long lengt
 				ivec[i] = out[count];
 			}
 			count=count- BLOCKSIZE;	
-			/*
-			inn += BLOCKSIZE;
-			out += BLOCKSIZE; */
+			
 			length -= BLOCKSIZE; 
 		}
 	}
